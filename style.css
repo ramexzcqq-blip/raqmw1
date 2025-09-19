@@ -1,0 +1,86 @@
+/* Добавьте эти стили в конец файла style.css */
+
+/* Стили для ресурсов в игре */
+.resource {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid transparent;
+    box-shadow: 0 0 15px currentColor;
+    animation: float 3s ease-in-out infinite;
+}
+
+.resource:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 25px currentColor;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Анимация сбора ресурса */
+@keyframes collect {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.collect-animation {
+    animation: collect 0.5s ease-out forwards;
+}
+
+/* Улучшенные стили для статистики игры */
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    background: rgba(22, 27, 34, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+}
+
+.stat {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: rgba(33, 38, 45, 0.9);
+    min-width: 80px;
+}
+
+.stat-label {
+    display: block;
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .resource {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .game-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .stat {
+        min-width: auto;
+    }
+}
