@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMQ Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <h1 class="logo"><i class="fas fa-server"></i> REMQ</h1>
+                <p class="server-version">Minecraft 1.21.5 Fabric</p>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="main">Главная</button>
+                <button class="nav-btn" data-tab="game">Мини-игра</button>
+                <button class="nav-btn" data-tab="info">Информация</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- Главная вкладка -->
+            <div class="tab-content active" id="main-tab">
+                <div class="server-status-card">
+                    <h2>Статус сервера</h2>
+                    <div class="status-container">
+                        <div class="status-indicator" id="status-indicator">
+                            <div class="status-pulse"></div>
+                            <div class="status-text">Проверка...</div>
+                        </div>
+                        <div class="server-info">
+                            <p><strong>IP:</strong> tcp.cloudpub.ru:27271</p>
+                            <p><strong>Игроков онлайн:</strong> <span id="players-online">0</span>/20</p>
+                            <p><strong>Версия:</strong> <span id="server-version">1.21.5</span> Fabric</p>
+                        </div>
+                    </div>
+                    <button class="action-btn" id="refresh-status">
+                        <i class="fas fa-sync-alt"></i> Обновить статус
+                    </button>
+                </div>
+
+                <div class="server-actions">
+                    <h2>Быстрые действия</h2>
+                    <div class="action-buttons">
+                        <button class="action-btn">
+                            <i class="fas fa-copy"></i> Скопировать IP
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-users"></i> Список игроков
+                        </button>
+                        <button class="action-btn" id="mods-btn">
+                            <i class="fas fa-download"></i> Моды и ресурспаки
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка мини-игры -->
+            <div class="tab-content" id="game-tab">
+                <div class="game-container">
+                    <h2>Мини-игра: Сбор ресурсов</h2>
+                    <div class="game-stats">
+                        <div class="stat">
+                            <span class="stat-label">Счёт:</span>
+                            <span id="score">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Время:</span>
+                            <span id="time">60</span>с
+                        </div>
+                    </div>
+                    <div class="game-area" id="game-area">
+                        <div class="game-instructions">
+                            <p>Кликай на ресурсы, чтобы собирать их!</p>
+                            <button class="action-btn" id="start-game">Начать игру</button>
+                        </div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="action-btn" id="reset-game">
+                            <i class="fas fa-redo"></i> Заново
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вкладка информации -->
+            <div class="tab-content" id="info-tab">
+                <div class="info-container">
+                    <h2>Информация о сервере</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3><i class="fas fa-info-circle"></i> Основное</h3>
+                            <ul>
+                                <li><strong>Название:</strong> REMQ Server</li>
+                                <li><strong>Версия:</strong> Minecraft 1.21.5</li>
+                                <li><strong>Модпак:</strong> Fabric</li>
+                                <li><strong>Режим:</strong> Выживание</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-cogs"></i> Настройки</h3>
+                            <ul>
+                                <li><strong>Слоты:</strong> 20 игроков</li>
+                                <li><strong>Защита:</strong> Whitelist</li>
+                                <li><strong>PvP:</strong> Разрешено</li>
+                                <li><strong>Сложность:</strong> Нормальная</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-plug"></i> Моды</h3>
+                            <ul>
+                                <li>JourneyMap</li>
+                                <li>JEI</li>
+                                <li>OptiFine</li>
+                                <li>Iron Chests</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-shield-alt"></i> Правила</h3>
+                            <ul>
+                                <li>Не гриферить</li>
+                                <li>Уважать других игроков</li>
+                                <li>Не использовать читы</li>
+                                <li>Соблюдать адекватность</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 REMQ Minecraft Server. Все права защищены.</p>
+            <p>Сервер работает на Fabric 1.21.5</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
