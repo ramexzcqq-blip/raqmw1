@@ -3,7 +3,7 @@
   command = "echo 'No build command needed for static site'"
 
 [build.environment]
-  NODE_VERSION = "18.17.0"
+  NODE_VERSION = "22.19.0"
 
 [[redirects]]
   from = "/*"
@@ -21,8 +21,3 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-# netlify.toml
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
